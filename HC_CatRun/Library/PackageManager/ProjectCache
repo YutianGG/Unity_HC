@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638038304874060581
-    m_Hash: 1262175426
+      ticks: 638038449520778231
+    m_Hash: 1876090685
   m_LockFileStatus:
     m_FilePath: C:/Users/Appedu/Documents/GitHub/Unity_HC/HC_CatRun/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638038304874060581
-    m_Hash: 1293689618
+      ticks: 638038449520838095
+    m_Hash: 1868665718
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,157 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/Appedu/Documents/GitHub/Unity_HC/HC_CatRun/Packages
 m_EditorVersion: 2021.3.0f1 (6eacc8284459)
 m_ResolvedPackages:
+- packageId: com.unity.cinemachine@2.8.9
+  testable: 0
+  isDirectDependency: 1
+  version: 2.8.9
+  source: 1
+  resolvedPath: C:\Users\Appedu\Documents\GitHub\Unity_HC\HC_CatRun\Library\PackageCache\com.unity.cinemachine@2.8.9
+  assetPath: Packages/com.unity.cinemachine
+  name: com.unity.cinemachine
+  displayName: Cinemachine
+  author:
+    name: 
+    email: 
+    url: 
+  category: cinematography
+  type: asset
+  description: "Smart camera tools for passionate creators. \n\nNew starting from
+    2.7.1: Are you looking for the Cinemachine menu? It has moved to the GameObject
+    menu.\n\nIMPORTANT NOTE: If you are upgrading from the legacy Asset Store version
+    of Cinemachine, delete the Cinemachine asset from your project BEFORE installing
+    this version from the Package Manager."
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 2.1.11-beta.1
+    - 2.1.12
+    - 2.1.13
+    - 2.2.0
+    - 2.2.7
+    - 2.2.8
+    - 2.2.9
+    - 2.2.10-preview.3
+    - 2.2.10-preview.4
+    - 2.3.1
+    - 2.3.3
+    - 2.3.4
+    - 2.3.5-preview.3
+    - 2.4.0-preview.3
+    - 2.4.0-preview.4
+    - 2.4.0-preview.6
+    - 2.4.0-preview.7
+    - 2.4.0-preview.8
+    - 2.4.0-preview.9
+    - 2.4.0-preview.10
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0-preview.2
+    - 2.6.0-preview.3
+    - 2.6.0-preview.5
+    - 2.6.0-preview.8
+    - 2.6.0
+    - 2.6.1-preview.6
+    - 2.6.1
+    - 2.6.2-preview.1
+    - 2.6.2
+    - 2.6.3-preview.2
+    - 2.6.3
+    - 2.6.4
+    - 2.6.5
+    - 2.6.9
+    - 2.6.10
+    - 2.6.11
+    - 2.6.14
+    - 2.6.15
+    - 2.6.17
+    - 2.7.1
+    - 2.7.2
+    - 2.7.3
+    - 2.7.4
+    - 2.7.5
+    - 2.7.8
+    - 2.7.9
+    - 2.8.0-exp.1
+    - 2.8.0-exp.2
+    - 2.8.0-pre.1
+    - 2.8.0
+    - 2.8.1
+    - 2.8.2
+    - 2.8.3
+    - 2.8.4
+    - 2.8.6
+    - 2.8.9
+    - 2.9.0-pre.1
+    - 2.9.0-pre.6
+    - 2.9.1
+    - 2.9.2
+    - 3.0.0-pre.3
+    compatible:
+    - 2.8.4
+    - 2.8.6
+    - 2.8.9
+    - 2.9.0-pre.1
+    - 2.9.0-pre.6
+    - 2.9.1
+    - 2.9.2
+    verified: 2.8.9
+  dependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  resolvedDependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - camera
+  - follow
+  - rig
+  - fps
+  - cinematography
+  - aim
+  - orbit
+  - cutscene
+  - cinematic
+  - collision
+  - freelook
+  - cinemachine
+  - compose
+  - composition
+  - dolly
+  - track
+  - clearshot
+  - noise
+  - framing
+  - handheld
+  - lens
+  - impulse
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637975495930000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
+    revision: 92bcde243d623d77c64960a552f29396770af1e1
+    path: 
+  unityLifecycle:
+    version: 2.8.4
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.15.15
   testable: 0
   isDirectDependency: 1
@@ -36,7 +187,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Editor
-  type: 
+  type: asset
   description: The Version Control package gives you the ability to use either Collaborate
     or Plastic SCM for Unity (beta) in the Unity editor. To use Plastic SCM for Unity
     (beta), a Plastic SCM subscription is required. Learn more about how you can
@@ -80,6 +231,8 @@ m_ResolvedPackages:
     - 1.14.13
     - 1.14.15
     - 1.14.16
+    - 1.14.17
+    - 1.14.18
     - 1.15.1
     - 1.15.4
     - 1.15.7
@@ -88,6 +241,13 @@ m_ResolvedPackages:
     - 1.15.13
     - 1.15.15
     - 1.15.16
+    - 1.15.17
+    - 1.15.18
+    - 1.17.0
+    - 1.17.1
+    - 1.17.2
+    - 1.17.6
+    - 1.17.7
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -101,6 +261,13 @@ m_ResolvedPackages:
     compatible:
     - 1.15.15
     - 1.15.16
+    - 1.15.17
+    - 1.15.18
+    - 1.17.0
+    - 1.17.1
+    - 1.17.2
+    - 1.17.6
+    - 1.17.7
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -111,7 +278,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.15.16
+    verified: 1.15.18
   dependencies:
   - name: com.unity.services.core
     version: 1.0.1
@@ -141,7 +308,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637828649420000000
   documentationUrl: 
@@ -168,7 +335,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -205,9 +372,15 @@ m_ResolvedPackages:
     - 3.0.10
     - 3.0.12
     - 3.0.13
+    - 3.0.14
+    - 3.0.15
+    - 3.0.16
     compatible:
     - 3.0.13
-    verified: 3.0.13
+    - 3.0.14
+    - 3.0.15
+    - 3.0.16
+    verified: 3.0.16
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -222,7 +395,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637837345400000000
   documentationUrl: 
@@ -249,7 +422,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Code editor integration for supporting Visual Studio as code editor
     for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -275,10 +448,12 @@ m_ResolvedPackages:
     - 2.0.12
     - 2.0.14
     - 2.0.15
+    - 2.0.16
     compatible:
     - 2.0.14
     - 2.0.15
-    verified: 2.0.15
+    - 2.0.16
+    verified: 2.0.16
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -299,7 +474,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637782923640000000
   documentationUrl: 
@@ -569,6 +744,8 @@ m_ResolvedPackages:
     - 10.8.0
     - 10.8.1
     - 10.9.0
+    - 10.10.0
+    - 10.10.1
     - 12.1.6
     compatible:
     - 12.1.6
@@ -644,7 +821,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Unity Test Framework
-  type: 
+  type: asset
   description: Test framework for running Edit mode and Play mode tests in Unity.
   status: 4
   errors: []
@@ -683,13 +860,19 @@ m_ResolvedPackages:
     - 1.1.29
     - 1.1.30
     - 1.1.31
+    - 1.1.33
+    - 1.3.0
+    - 2.0.1-exp.1
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     compatible:
     - 1.1.31
+    - 1.1.33
+    - 1.3.0
+    - 2.0.1-exp.1
     - 2.0.1-pre.12
     - 2.0.1-pre.18
-    verified: 1.1.31
+    verified: 1.1.33
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -714,7 +897,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637804266210000000
   documentationUrl: 
@@ -906,7 +1089,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Use Unity Timeline to create cinematic content, game-play sequences,
     audio sequences, and complex particle effects.
   status: 4
@@ -985,12 +1168,16 @@ m_ResolvedPackages:
     - 1.7.0-pre.2
     - 1.7.0
     - 1.7.1
+    - 1.7.2
+    - 1.8.0
     compatible:
     - 1.6.4
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
     - 1.7.1
+    - 1.7.2
+    - 1.8.0
     verified: 1.6.4
   dependencies:
   - name: com.unity.modules.director
@@ -1023,7 +1210,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637789039180000000
   documentationUrl: 
@@ -1112,7 +1299,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: tool
   description: 'Visual scripting is a workflow that uses visual, node-based graphs
     to design behaviors rather than write lines of C# script.
 
@@ -1143,11 +1330,13 @@ m_ResolvedPackages:
     - 1.7.5
     - 1.7.6
     - 1.7.7
+    - 1.7.8
     - 1.8.0-pre.1
     compatible:
     - 1.7.6
     - 1.7.7
-    verified: 1.7.7
+    - 1.7.8
+    verified: 1.7.8
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -2937,7 +3126,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: 
+  type: asset
   description: Custom version of the nunit package build to work with Unity. Used
     by the Unity Test Framework.
   status: 4
@@ -2951,9 +3140,11 @@ m_ResolvedPackages:
     - 1.0.5
     - 1.0.6
     - 2.0.2
+    - 2.0.3
     compatible:
     - 1.0.6
     - 2.0.2
+    - 2.0.3
     verified: 1.0.6
   dependencies: []
   resolvedDependencies: []
@@ -2968,7 +3159,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 
@@ -3061,7 +3252,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Burst is a compiler that translates from IL/.NET bytecode to highly
     optimized native code using LLVM.
   status: 4
@@ -3175,15 +3366,31 @@ m_ResolvedPackages:
     - 1.6.3
     - 1.6.4
     - 1.6.5
+    - 1.6.6
     - 1.7.0-pre.1
     - 1.7.0
     - 1.7.1
+    - 1.7.2
+    - 1.7.3
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
     compatible:
     - 1.6.5
+    - 1.6.6
     - 1.7.0-pre.1
     - 1.7.0
     - 1.7.1
-    verified: 1.6.5
+    - 1.7.2
+    - 1.7.3
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics
     version: 1.2.1
@@ -3198,7 +3405,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637835629630000000
   documentationUrl: 
@@ -3333,6 +3540,8 @@ m_ResolvedPackages:
     - 10.8.0
     - 10.8.1
     - 10.9.0
+    - 10.10.0
+    - 10.10.1
     - 12.1.6
     compatible:
     - 12.1.6
@@ -3495,6 +3704,8 @@ m_ResolvedPackages:
     - 10.8.0
     - 10.8.1
     - 10.9.0
+    - 10.10.0
+    - 10.10.1
     - 12.1.6
     compatible:
     - 12.1.6
@@ -3611,7 +3822,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: 'This package defines common components used by multiple Game Service
     packages.
 
@@ -3631,6 +3842,13 @@ m_ResolvedPackages:
     - 1.1.0-pre.69
     - 1.2.0
     - 1.3.1
+    - 1.3.2
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.5.2
+    - 1.6.0
     compatible:
     - 1.0.1
     - 1.1.0-pre.7
@@ -3642,6 +3860,13 @@ m_ResolvedPackages:
     - 1.1.0-pre.69
     - 1.2.0
     - 1.3.1
+    - 1.3.2
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.5.2
+    - 1.6.0
     verified: 1.0.1
   dependencies:
   - name: com.unity.modules.unitywebrequest
@@ -3657,7 +3882,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637604883250000000
   documentationUrl: 
@@ -3684,17 +3909,33 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: General search window for use in the Editor. First target use is for
     GraphView node search.
   status: 4
   errors: []
   versions:
     all:
+    - 4.0.0-preview
+    - 4.0.0
+    - 4.0.7-preview
+    - 4.0.7
+    - 4.0.8-preview
+    - 4.0.9
+    - 4.1.0-preview
+    - 4.1.0
+    - 4.2.0
+    - 4.3.0
+    - 4.3.1
+    - 4.3.2
+    - 4.6.0-preview
+    - 4.7.0-preview
     - 4.9.1
+    - 4.9.2
     compatible:
     - 4.9.1
-    verified: 4.9.1
+    - 4.9.2
+    verified: 4.9.2
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -3707,9 +3948,9 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637695653650000000
   documentationUrl: 
   hasRepository: 1
   repository:
