@@ -1298,7 +1298,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.25
+  near clip plane: 0.5
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1325,14 +1325,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.3, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0.0010918375, y: 0.70710593, z: 0.001091838, w: 0.70710593}
+  m_LocalPosition: {x: 0.29999995, y: 0.5, z: -2.5791367e-19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 839321594}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.177, y: 90, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,6 @@ GameObject:
   - component: {fileID: 839321592}
   - component: {fileID: 839321591}
   - component: {fileID: 839321595}
-  - component: {fileID: 839321596}
   - component: {fileID: 839321597}
   m_Layer: 0
   m_Name: Player
@@ -1692,7 +1691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839321590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 1, z: 0}
+  m_LocalPosition: {x: -4, y: 2.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1712,24 +1711,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &839321596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839321590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fec60ec0ebe47e43b6ba5c7697d4cde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &839321597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,6 +1731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 839321595}
   Speed: 3
+  MouseSpeed: 1.5
+  JumpSpeed: 6
+  Camera: {fileID: 330585546}
 --- !u!1 &893538853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1871,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-400318
+  m_Name: pb_Mesh27104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
