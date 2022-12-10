@@ -423,6 +423,9 @@ ModelImporter:
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
+  - first:
+      74: -2011613777245036290
+    second: BasicMotions@JumpEnd01 (1)
   externalObjects: {}
   materials:
     materialImportMode: 0

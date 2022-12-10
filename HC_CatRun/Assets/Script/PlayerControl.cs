@@ -1,8 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
+    public static PlayerControl instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     [SerializeField] Rigidbody RB;
     [SerializeField] Animator ani;
     [SerializeField] float Speed = 2f;
@@ -10,6 +17,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float JumpSpeed = 50f;
     [SerializeField] Transform Camera;
     [SerializeField] Transform PlayerY;
+    [SerializeField] Transform wall;
+    [SerializeField] Transform Box;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -18,11 +27,14 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         Move();
+        Wall();
         Dodge();
     }
     float vertical = 0f;
     float horizontal = 0f;
     float mouseY = 0f;//滑鼠位移
+    float acc = 0f;
+    [SerializeField] float ang = 1f;
     private void Move()
     {
         //取得方向鍵
@@ -45,14 +57,17 @@ public class PlayerControl : MonoBehaviour
 
         //設定座標
         Vector3 Move = new Vector3
-            (horizontal * Speed, RB.velocity.y, vertical * Speed);
+            (horizontal * Speed *(1f + acc * ang), RB.velocity.y, vertical * Speed * (1f + acc * ang));
         
         //修正座標
         Move = PlayerY.transform.TransformDirection(Move);
 
+        ani.speed = 1f + (acc * ang);
+
         //修改RB速率為向量Move
         RB.velocity = Move;
-       
+        Move.y = 0f;
+        Box.rotation = Quaternion.LookRotation(Move, Vector3.up);
         //取得滑鼠水平位移  
         float mouseX = Input.GetAxis("Mouse X");
 
@@ -74,7 +89,11 @@ public class PlayerControl : MonoBehaviour
 
         //跳躍
         if (Input.GetKeyDown(KeyCode.F) && onFloor)
+        {
             RB.velocity = new Vector3(RB.velocity.x, JumpSpeed, RB.velocity.z);
+            acc = 0;
+        }
+            
     }
     private void Dodge()
     {   
@@ -138,13 +157,38 @@ public class PlayerControl : MonoBehaviour
         }
         */
     }
-
+    private void Wall()
+    {
+        if (wall.transform.position.z < this.transform.position.z - 10f)
+            wall.transform.position = this.transform.position + new Vector3(0f, 0f, -10f);
+    }
     bool onFloor = false;//跳躍判定
     private void FixedUpdate() //物理刷新
     {
         onFloor = Physics.Raycast
             (this.transform.position, new Vector3(0f, -1f, 0f), 1.1f);
         ani.SetBool("onFloor", onFloor);
+
+        // 在箱子前方下一個偵測長度的雷射
+        // TransformPoint 抓出相對於本地座標的一個世界座標點
+        RaycastHit raycastHitA;
+        bool raycastA_hit = 
+            Physics.Raycast(Box.TransformPoint(0f, 0f, 0.5f), Vector3.down, out raycastHitA, 999f);
+        float a = 1f;
+        if (raycastA_hit)
+            a = Vector3.Distance(Box.TransformPoint(0f, 0f, 0.5f), raycastHitA.point);
+
+        RaycastHit raycastHitB;
+        bool raycastB_hit =
+            Physics.Raycast(Box.TransformPoint(0f, 0f, -0.5f), Vector3.down, out raycastHitB, 999f);
+        float b = 1f;
+        if (raycastB_hit)
+            b = Vector3.Distance(Box.TransformPoint(0f, 0f, -0.5f), raycastHitB.point);
+
+        if (raycastA_hit && raycastB_hit)
+            acc = a - b;
+        if (onFloor == false)
+            acc = 0;
     }
 
     [SerializeField] Image energy = null; 
