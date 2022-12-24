@@ -19,16 +19,25 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Transform PlayerY;
     [SerializeField] Transform wall;
     [SerializeField] Transform Box;
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        //﹍てネ㏑秖だ计
         Energy = maxEnergy;
+        HP = maxHP;
+        score = 0f;
+        //砞程禯瞒翴
+        max_dis = this.transform.position.z;
+        highScore = highScore;
     }
     private void Update()
     {
         Move();
+        Score();
         Wall();
         Dodge();
+        CameraShock();
     }
     float vertical = 0f;
     float horizontal = 0f;
@@ -162,6 +171,55 @@ public class PlayerControl : MonoBehaviour
         if (wall.transform.position.z < this.transform.position.z - 10f)
             wall.transform.position = this.transform.position + new Vector3(0f, 0f, -10f);
     }
+    
+    float max_dis = 0f; //程禯瞒
+    private void Score()
+    {
+        /*
+        if(this.transform.position.z > score)
+            score = this.transform.position.z ;
+        */
+        if (this.transform.position.z > max_dis)
+        {
+            float add_dis = this.transform.position.z - max_dis;
+            score += add_dis;
+            max_dis = this.transform.position.z;
+        }
+        //魁程蔼だ
+        if (highScore < score)
+            highScore = score;
+    }
+
+    [SerializeField] float shockRage;
+    [SerializeField] float shockWeak;
+    [SerializeField] Transform shockCamera;
+    [SerializeField] float slowTimeRage;
+    [SerializeField] float slowTimeWeak;
+    [SerializeField] float slowTimeStrong;  
+
+    private void CameraShock()
+    {
+        float shockX = Random.Range(shockRage * -1f, shockRage);
+        float shockY = Random.Range(shockRage * -1f, shockRage);
+        shockCamera.localPosition = new Vector3(shockX, shockY, 0f);
+
+        //Time.unscaledDeltaTime 
+        //Time.deltaTime
+        shockRage -= shockWeak * Time.unscaledDeltaTime;
+        shockRage = Mathf.Clamp(shockRage, 0f, 2f);
+
+        slowTimeRage -= slowTimeWeak * Time.unscaledDeltaTime;
+        slowTimeRage = Mathf.Clamp(slowTimeRage, 0f, 2f);
+
+        Time.timeScale = Mathf.Clamp(1f - (slowTimeRage * slowTimeStrong), 0f, 1f); 
+    }
+    public void Injure(float damage)
+    {
+        HP -= damage;
+        shockRage = 1f;
+        slowTimeRage = 1f;
+    }
+
     bool onFloor = false;//铬臘﹚
     private void FixedUpdate() //瞶穝
     {
@@ -191,19 +249,62 @@ public class PlayerControl : MonoBehaviour
             acc = 0;
     }
 
+    /// <summary>
+    /// 秖
+    /// </summary>
     [SerializeField] Image energy = null; 
     float Energy
     {
-        get 
-        {
-            return _energy;
-        }
+        get { return _energy;}
         set 
         { 
             _energy = Mathf.Clamp(value, 0f, maxEnergy); 
             energy.fillAmount = _energy / maxEnergy;
         }
+        
     }
     float _energy = 100f;
     float maxEnergy = 100f;
+
+    /// <summary>
+    /// ネ㏑
+    /// </summary>
+    [SerializeField] float maxHP = 100f;
+    [SerializeField] Image hp_Image;
+
+    float HP
+    {
+        get { return maxHP * hp_Image.fillAmount; }
+        set { hp_Image.fillAmount = value / maxHP; }
+    }
+
+    /// <summary>
+    /// だ计
+    /// </summary>
+    [SerializeField] Text score_text;
+    float score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+            score_text.text = Mathf.Round(value) + "M";
+        }
+    }
+    float _score = 0f;
+
+    [SerializeField] Text highScore_text;
+    /// <summary>
+    /// 程蔼だ
+    /// </summary>
+    float highScore
+    {
+        get { return PlayerPrefs.GetFloat("HIGHSCORE", 0f); }
+        set
+        { 
+            PlayerPrefs.SetFloat("HIGHSCORE", value);
+            highScore_text.text = "HIGH SCORE " + Mathf.Round(value);
+        }
+    }
+    
 }

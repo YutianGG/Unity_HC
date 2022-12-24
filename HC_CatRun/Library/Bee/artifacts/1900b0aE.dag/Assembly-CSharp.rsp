@@ -393,6 +393,7 @@
 "Assets/Script/PlayerControl.cs"
 "Assets/Script/PlayerMove.cs"
 "Assets/Script/Test.cs"
+"Assets/Script/TrapDamage.cs"
 "Assets/Script/TrapRaycase.cs"
 "Assets/TestAI/Script/CubeAI.cs"
 "Assets/TestAI/Script/Food.cs"
