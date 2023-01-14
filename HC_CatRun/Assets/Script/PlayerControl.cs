@@ -77,6 +77,9 @@ public class PlayerControl : MonoBehaviour
         RB.velocity = Move;
         Move.y = 0f;
         Box.rotation = Quaternion.LookRotation(Move, Vector3.up);
+
+        if (EndUI.ins.isOpen == true)
+            return;
         //取得滑鼠水平位移  
         float mouseX = Input.GetAxis("Mouse X");
 
@@ -173,7 +176,7 @@ public class PlayerControl : MonoBehaviour
     }
     
     float max_dis = 0f; //最大距離
-    private void Score()
+    public void Score()
     {
         /*
         if(this.transform.position.z > score)
@@ -211,13 +214,19 @@ public class PlayerControl : MonoBehaviour
         slowTimeRage -= slowTimeWeak * Time.unscaledDeltaTime;
         slowTimeRage = Mathf.Clamp(slowTimeRage, 0f, 2f);
 
-        Time.timeScale = Mathf.Clamp(1f - (slowTimeRage * slowTimeStrong), 0f, 1f); 
+        if(EndUI.ins.isOpen == false)
+            Time.timeScale = Mathf.Clamp(1f - (slowTimeRage * slowTimeStrong), 0f, 1f); 
     }
     public void Injure(float damage)
     {
+        if (flashRage > 0)
+            return;
         HP -= damage;
         shockRage = 1f;
         slowTimeRage = 1f;
+        flashRage = 1f;
+        if (HP <= 0)
+            EndUI.ins.Open();
     }
 
     bool onFloor = false;//跳躍判定
@@ -282,7 +291,7 @@ public class PlayerControl : MonoBehaviour
     /// 分數
     /// </summary>
     [SerializeField] Text score_text;
-    float score
+    public float score
     {
         get { return _score; }
         set
@@ -297,7 +306,7 @@ public class PlayerControl : MonoBehaviour
     /// <summary>
     /// 最高分
     /// </summary>
-    float highScore
+    public float highScore
     {
         get { return PlayerPrefs.GetFloat("HIGHSCORE", 0f); }
         set
@@ -306,5 +315,20 @@ public class PlayerControl : MonoBehaviour
             highScore_text.text = "HIGH SCORE " + Mathf.Round(value);
         }
     }
-    
+    [SerializeField]Renderer render;
+    float flashRage = 0f;
+    float _flashRage = 1f; //上一偵
+    private void LateUpdate()
+    {
+        if(_flashRage != flashRage)
+        {
+            _flashRage = flashRage;
+            render.material.SetFloat("_Ctrl", flashRage);
+        }
+
+        if (flashRage > 0f)
+            flashRage -= Time.unscaledDeltaTime;
+        else if (flashRage < 0f)
+            flashRage = 0f;
+    }
 }
