@@ -15,13 +15,14 @@ public class EndUI : Windows<EndUI>
         base.Open();
         Cursor.lockState = CursorLockMode.None;
         scoreText.text = Mathf.Round(PlayerControl.instance.score).ToString();
-        if(PlayerControl.instance.score <= PlayerControl.instance.highScore)
-            highscoreText.text = Mathf.Round(PlayerControl.instance.highScore).ToString();
+        if(PlayerControl.instance.score < SaveManager.instance.playerData.highScore)
+            highscoreText.text = Mathf.Round(SaveManager.instance.playerData.highScore).ToString("F0");
         else
         {
             //新紀錄
-            PlayerControl.instance.highScore = PlayerControl.instance.score;
-            highscoreText.text = Mathf.Round(PlayerControl.instance.highScore).ToString();
+            SaveManager.instance.playerData.highScore = (int)PlayerControl.instance.score;
+            SaveManager.instance.Save();
+            highscoreText.text = Mathf.Round(SaveManager.instance.playerData.highScore).ToString("F0");
             hideNewScore = true;
         }
     }
@@ -31,8 +32,8 @@ public class EndUI : Windows<EndUI>
         Time.timeScale = 0.001f;
         if (hideNewScore)
             ani.SetTrigger("Play");
+        
     }
-
     public void Replay()
     {
         //載入當前關卡

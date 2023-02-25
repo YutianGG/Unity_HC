@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //讀取存檔
+        SaveManager.instance.Load();
     }
     [SerializeField] Rigidbody RB;
     [SerializeField] Animator ani;
@@ -29,7 +31,6 @@ public class PlayerControl : MonoBehaviour
         score = 0f;
         //設最大距離為原點
         max_dis = this.transform.position.z;
-        highScore = highScore;
     }
     private void Update()
     {
@@ -188,9 +189,6 @@ public class PlayerControl : MonoBehaviour
             score += add_dis;
             max_dis = this.transform.position.z;
         }
-        //紀錄最高分
-        if (highScore < score)
-            highScore = score;
     }
 
     [SerializeField] float shockRage;
@@ -306,15 +304,7 @@ public class PlayerControl : MonoBehaviour
     /// <summary>
     /// 最高分
     /// </summary>
-    public float highScore
-    {
-        get { return PlayerPrefs.GetFloat("HIGHSCORE", 0f); }
-        set
-        { 
-            PlayerPrefs.SetFloat("HIGHSCORE", value);
-            highScore_text.text = "HIGH SCORE " + Mathf.Round(value);
-        }
-    }
+    
     [SerializeField]Renderer render;
     float flashRage = 0f;
     float _flashRage = 1f; //上一偵

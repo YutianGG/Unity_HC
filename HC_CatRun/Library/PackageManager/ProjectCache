@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638092977519737220
-    m_Hash: 1678006063
+      ticks: 638129016005521055
+    m_Hash: 181314725
   m_LockFileStatus:
     m_FilePath: C:/Users/Appedu/Desktop/Unity_HC/HC_CatRun/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638092977519826981
-    m_Hash: 1990841506
+      ticks: 638129016005521055
+    m_Hash: 2527774854
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -213,7 +213,9 @@ m_ResolvedPackages:
     - 2.9.1
     - 2.9.2
     - 2.9.4
+    - 2.9.5
     - 3.0.0-pre.3
+    - 3.0.0-pre.4
     compatible:
     - 2.8.4
     - 2.8.6
@@ -223,6 +225,7 @@ m_ResolvedPackages:
     - 2.9.1
     - 2.9.2
     - 2.9.4
+    - 2.9.5
     verified: 2.8.9
   dependencies:
   - name: com.unity.test-framework
