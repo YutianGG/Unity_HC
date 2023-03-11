@@ -77,7 +77,7 @@ public class PlayerControl : MonoBehaviour
         //修改RB速率為向量Move
         RB.velocity = Move;
         Move.y = 0f;
-        Box.rotation = Quaternion.LookRotation(Move, Vector3.up);
+        //Box.rotation = Quaternion.LookRotation(Move, Vector3.up);
 
         if (EndUI.ins.isOpen == true)
             return;

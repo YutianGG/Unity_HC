@@ -21,7 +21,6 @@ public class SaveManager
     public void Load()
     {
         string json = PlayerPrefs.GetString("PlayerData", "0");
-        Debug.Log(json);
         if (json == "0")
            playerData = new PlayerData(0);
         else
@@ -31,7 +30,6 @@ public class SaveManager
     {
         //轉換為JSON
         string json = JsonUtility.ToJson(playerData, true);
-        Debug.Log(json);
         PlayerPrefs.SetString("PlayerData", json);
     }
 }
@@ -56,25 +54,25 @@ public struct PlayerData
     public System.Action score_refreshed;
     [SerializeField] public int _highScore;
     //金幣數
-    public int gold
+    public int stone
     {
-        get { return _gold; }
+        get { return _stone; }
         set
         {
-            _gold = value;
-            if (gold_refreshed != null)
-                gold_refreshed.Invoke();
+            _stone = value;
+            if (stone_refreshed != null)
+                stone_refreshed.Invoke();
         }
     }
-    [SerializeField] public int _gold;
+    [SerializeField] public int _stone;
 
-    public System.Action gold_refreshed;
+    public System.Action stone_refreshed;
 
     public PlayerData(int x)
     {
         _highScore = 0;
-        _gold = 0;
+        _stone = 0;
         score_refreshed = null;
-        gold_refreshed = null;
+        stone_refreshed = null;
     }
 }

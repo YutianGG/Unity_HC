@@ -8,8 +8,17 @@ public class EndUI : Windows<EndUI>
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text highscoreText;
+    [SerializeField] Text stoneGet;
     [SerializeField] Animator ani;
     bool hideNewScore = false;
+    int stoneHold = 0;
+
+    protected override void Start()
+    {
+        base.Start();
+        stoneHold = SaveManager.instance.playerData.stone;
+    }
+
     public override void Open()
     {
         base.Open();
@@ -21,10 +30,12 @@ public class EndUI : Windows<EndUI>
         {
             //新紀錄
             SaveManager.instance.playerData.highScore = (int)PlayerControl.instance.score;
-            SaveManager.instance.Save();
             highscoreText.text = Mathf.Round(SaveManager.instance.playerData.highScore).ToString("F0");
             hideNewScore = true;
         }
+        stoneGet.text = "+" + (SaveManager.instance.playerData.stone - stoneHold);
+        //儲存玩家資料
+        SaveManager.instance.Save();
     }
     public override void OnOpen()
     {
